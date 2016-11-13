@@ -19,3 +19,12 @@ let player16:[String: String] = ["Name": "Phillip Helm", "Height": "44", "Experi
 let player17:[String: String] = ["Name": "Les Clay", "Height": "42", "Experience": "YES", "Guardians": "Wynona Brown"]
 let player18:[String: String] = ["Name": "Herschel Krustofski", "Height": "45", "Experience": "YES", "Guardians": "Hyman and Rachel Krustofski"]
 
+// Array Of Dictionaries For Entire League
+let entireLeague: [[String: String]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
+
+
+
+
+
+
+
