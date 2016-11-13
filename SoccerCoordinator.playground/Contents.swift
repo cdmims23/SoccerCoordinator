@@ -22,6 +22,11 @@ let player18:[String: String] = ["Name": "Herschel Krustofski", "Height": "45", 
 // Array Of Dictionaries For Entire League
 let entireLeague: [[String: String]] = [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
+// Variables so there are no hard coded numbers
+var numberOfTeams = 3
+var numberOfPlayersEachTeam = entireLeague.count / numberOfTeams
+var equalNumberOfPlayers = numberOfPlayersEachTeam / 2
+
 // Array Of Teams
 var teamDragons: [[String: String]] = []
 var teamSharks: [[String: String]] = []
@@ -29,25 +34,26 @@ var teamRaptors: [[String: String]] = []
 
 // Loop Through each player to add players with experience first.
 for index in 0..<entireLeague.count {
-    if teamDragons.count<3 && entireLeague[index]["Experience"] == "YES" {
+    if teamDragons.count<equalNumberOfPlayers && entireLeague[index]["Experience"] == "YES" {
         teamDragons.append(entireLeague[index])
-    }else if teamSharks.count<3 && entireLeague[index]["Experience"] == "YES" {
+    }else if teamSharks.count<equalNumberOfPlayers && entireLeague[index]["Experience"] == "YES" {
         teamSharks.append(entireLeague[index])
-    }else if teamRaptors.count<3 && entireLeague[index]["Experience"] == "YES"{
+    }else if teamRaptors.count<equalNumberOfPlayers && entireLeague[index]["Experience"] == "YES"{
         teamRaptors.append(entireLeague[index])
     }
 }
 
 // Loop through each player to add players without experience
 for index in 0..<entireLeague.count {
-    if teamDragons.count<6 && entireLeague[index]["Experience"] == "NO" {
+    if teamDragons.count<numberOfPlayersEachTeam && entireLeague[index]["Experience"] == "NO" {
         teamDragons.append(entireLeague[index])
-    }else if teamSharks.count<6 && entireLeague[index]["Experience"] == "NO" {
+    }else if teamSharks.count<numberOfPlayersEachTeam && entireLeague[index]["Experience"] == "NO" {
         teamSharks.append(entireLeague[index])
-    }else if teamRaptors.count<6 && entireLeague[index]["Experience"] == "NO"{
+    }else if teamRaptors.count<numberOfPlayersEachTeam && entireLeague[index]["Experience"] == "NO"{
         teamRaptors.append(entireLeague[index])
     }
 }
+
 
 
 
