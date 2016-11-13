@@ -54,6 +54,28 @@ for index in 0..<entireLeague.count {
     }
 }
 
+// Parent Letter Function
+func parentLetter(teamName: String, team: [[String: String]]) {
+    // Loop through each player on the team.
+    for index in 0..<team.count {
+        // Find out the team meeting time using teamName variable
+        var teamMeetingTime = "March 17th at 1p.m."
+        if teamName == "Sharks" {
+            teamMeetingTime = "March 17th at 3p.m."
+        }else if teamName == "Raptors" {
+            teamMeetingTime = "March 18th at 1p.m."
+        }
+        print("Dear \(team[index]["Guardians"]!), Your child \(team[index]["Name"]!) has been chosen to play for the \(teamName). Our first practice time will be \(teamMeetingTime) Hope to see you there!")
+        print()
+    }
+}
+
+// Call the parentLetter Function
+parentLetter(teamName: "Dragons", team: teamDragons)
+print()
+parentLetter(teamName: "Sharks", team: teamSharks)
+print()
+parentLetter(teamName: "Raptors", team: teamRaptors)
 
 
 
